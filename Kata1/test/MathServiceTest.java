@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-import kata1.StringService;
+import kata1.MathService;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,44 +16,50 @@ import static org.junit.Assert.*;
  *
  * @author alexandru
  */
-public class StringServiceTest {
+public class MathServiceTest {
     
-    private StringService service;
+    MathService mService;
     
-    public StringServiceTest() {
+    public MathServiceTest() {
     }
+    
     
     @Before
     public void setUp() {
-        service = new StringService();
+        mService = new MathService();
     }
     
     @After
     public void tearDown() {
-        service = null;
+        mService = null;
     }
     
     @Test
-    public void rolorShouldReturnTrue()
+    public void ShouldBeTrue2000()
     {
-        boolean check = service.isPalindrome("rolor");
+        boolean check = mService.isLeapYear(2000);
         assertTrue(check);
     }
-    
-    @Test    
-    public void colorShouldReturnFalse()
+    @Test
+    public void ShouldBeFalse2010()
     {
-        boolean check = service.isPalindrome("color");
+        boolean check = mService.isLeapYear(2010);
         assertFalse(check);
     }
-    
-    @Test    
-    public void aaaaaShouldReturnTrue()
+    @Test
+    public void ShouldBeFalse1800()
     {
-        boolean check = service.isPalindrome("aaaaa");
-        assertTrue(check);
+        boolean check = mService.isLeapYear(1800);
+        assertFalse(check);
     }
-        
+     
+    @Test
+    public void ShouldBeTrue2012()
+    {
+        boolean check = mService.isLeapYear(2012);
+        assertTrue(check);
+    }   
+    
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

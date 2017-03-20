@@ -16,7 +16,7 @@ public class StringService {
         StringBuilder str = new StringBuilder(string);
         str.reverse();
         String finalReversed = new String(str);
-        if(string.equals(str))
+        if(string.equals(finalReversed))
             return true;
         return false;
     }
